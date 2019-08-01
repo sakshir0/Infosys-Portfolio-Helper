@@ -1,7 +1,7 @@
 # Infosys-Portfolio-Helper
 
 ## Inspiration ##
-This is a proof-of-concept application built for Infosys. We wanted to create a digital platform that provided algorithm-driven, automated financial planning services.  
+This is a proof of concept application built for Infosys. We wanted to create a digital platform that provided algorithm-driven, automated financial planning services.  
 
 ## What It Does ##
 It is an application designed to help clients create and manage a stock portfolio using momentum as a metric. It creates a stock portfolio for clients with stocks containing the highest momentum scores that will automatically rebalance itself every six months. It limits turnover within the portfolio to reduce costs. It also allows clients to search for a stock ticker and see its price history and our calculated momentum score for that particular stock. 
