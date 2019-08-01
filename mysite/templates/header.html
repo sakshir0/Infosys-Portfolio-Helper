@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<!-- navigation bar tabs, collapsible -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" font-type="text/css" media="screen">
+            <img src="{% static 'logo.png' %}" id="logo" width="30" height="30" class="d-inline-block align-top">
+            Momentum
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link mr-5" id="portfolio" data-toggle="list"">My Portfolio</a>
+                <script type="text/javascript">
+                   var element = document.getElementById("portfolio");
+                   element.setAttribute('onclick', 'window.location.href=\'/portfolio\'');
+                </script>
+
+                <a class="nav-item nav-link mr-5" id="search" data-toggle="list">Search Stocks</a>
+                <script type="text/javascript">
+                   var element = document.getElementById("search");
+                   element.setAttribute('onclick', 'window.location.href=\'/stocks\'');
+                </script>
+
+                <a class="nav-item nav-link mr-5" id="about"data-toggle="list">About Us</a>
+                <script type="text/javascript">
+                   var element = document.getElementById("about");
+                   element.setAttribute('onclick', "window.location.href= '/portfolio/about'");
+                </script>
+
+                <form class="logout-link" id="logout-form" data-toggle="list" action="{% url 'accounts:logout' %}" method="POST">
+                    {% csrf_token %}
+                    <a class="nav-item nav-link mr-5 {% if page == selected_page %}{% endif %}" onclick="document.getElementById('logout-form').submit();">Logout</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+{% endblock %}

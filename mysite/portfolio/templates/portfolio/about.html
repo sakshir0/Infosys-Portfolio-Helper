@@ -1,0 +1,33 @@
+{% include 'header.html' %}
+{% load staticfiles %}
+{% block content %}
+	<div class="jumbotron" style="background-image: url(http://randomactsofleadership.com/wp-content/uploads/2015/10/newtons-cradle-256213_1280-e1445609208568.jpg);height:275px;background-size: auto 100%;}">
+		<h1 class="display-3 text-center text-white">About Us</h1>
+	</div>
+<div class="container">
+<h3 style="margin-bottom:10px;">
+	What is momentum?
+</h3>
+<p class=" lead text-justify font-weight-normal" style="margin-bottom:30px;margin-left:5px;font-size: 18px">
+	Momentum, simply put, is the speed at which the price of a particular security is changing. A momentum investing strategy is based around the idea that stocks that have done well in the recent past will continue to do well in the near future. It essentially aims to capitalize on the continuance of trends in the market in the short term. 
+</p>
+<h3>
+	How do we calculate a momentum score for each stock?
+</h3>
+<p class="lead text-justify font-weight-normal" style="margin-bottom:30px;margin-left:5px;font-size: 18px">
+	We use a Sharpe momentum and rebalancing strategy created primarily from a research paper by Research Affliates. We first calculate the volatility of the stock over the past three years using the standard deviation of weekly price returns. We then calculate the risk-adjusted six and twelve month momentum by subtracting the risk-free rate from the local return and then dividing by the volatility. We find the z-scores of each of the two momentums for every stock, average the two scores, and winsorize that data at +/-3. Finally, we calculate a momentum score for each stock as one plus the momentums average z-score if the z-score is larger than 0 or one minus the momentums average z-score to the power of negative one if the z-score is less than 0. 
+</p>
+<h3>
+	How does my portfolio get rebalanced?
+</h3>
+<p class="lead text-justify font-weight-normal" style="margin-bottom:30px;margin-left:5px; font-size: 18px">
+	We try to limit the amount of turnover in the portfolio to reduce cost. For that reason we use a fixed security buffer algorithm of fifty percent. We first will pick fifty percent of the portfolio using stocks ranked from highest to lowest by their momentum score. We then will then pick any stock that was previously in our portfolio and is still in the top 150% of the portfolio by number of stocks selected. If there are two many stocks selected, we will get rid of the ones with the lowest momentums. If there are too few selected, we will continue to add to our portfolio using momentum scores as ranked until we have the desired amount.
+</p>
+<h3>
+	What stocks are analyzed and how long should someone hold certain stocks?
+</h3>
+<p class="lead text-justify font-weight-normal" style="margin-bottom:30px;margin-left:5px;font-size: 18px">
+	We track all the stocks in the Russell 3000 as it is a benchmark of the entire US stock market and represents approximately ninety eight percent of the public equity market. We recommend holding the stocks in your portfolio for approximately six months before performing a rebalance.  
+</p>
+</div>
+{% endblock %}

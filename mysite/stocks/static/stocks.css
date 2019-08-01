@@ -1,0 +1,74 @@
+#tickerInput{
+	margin-right: 0px;
+	margin: 0px;
+}
+.btn{
+	margin-top: 25px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#ticker{
+	margin-top: 60px;
+	margin-left: 25px;
+}
+
+#name{
+	margin-left: 30px;
+}
+
+#chart{
+	margin-top: 20px;
+}
+
+#price{
+	margin-top: 60px;
+	margin-left: 200px;
+	text-align: center;
+	display: inline-block;
+}
+
+#changeDiv{
+	width: 150px;
+	height: 85px;
+	margin-top: 85px;
+	margin-left: 50px;
+
+}
+
+#changeText{
+	font-size: 35px;
+	font-family: verdana;
+	color: white !important;
+	text-align: center;
+	padding-top: 7px;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#circle {
+    position: relative;
+    color: white;
+    top: -500px;
+}
+
+/* Centered text */
+#score {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+}
+
+#titleGraphic{
+	position: absolute;
+	top: 0;
+	left: 0;
+    width: 100%;
+    color: black;
+    font-family: verdana;
+    font-size: 25px;
+}

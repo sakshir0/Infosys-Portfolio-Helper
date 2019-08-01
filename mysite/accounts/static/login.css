@@ -1,0 +1,35 @@
+.container {
+	margin-top: 75px;
+}
+.card {
+	padding: 5px;
+}
+
+.card-header{
+	font-family: tahoma;
+	color: white;
+	font-size: 20px;
+}
+
+label{
+	margin-left: 5px;
+	white-space: wrap;
+    max-width: 150px;
+    text-overflow: ellipsis;
+    float:left;  
+}
+
+#id_username{
+	margin-left: 100px;
+	margin-right: 10px;
+}
+
+#id_password{
+	margin-left: 100px;
+	margin-right: 10px;
+}
+
+#signup{
+	margin-top: 10px;
+	margin-left: 5px;
+}

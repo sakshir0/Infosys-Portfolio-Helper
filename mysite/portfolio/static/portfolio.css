@@ -1,0 +1,64 @@
+h3{
+	margin-bottom: 20px;
+	margin-top: 10px;
+	padding: 0px;
+}
+
+#ticker{
+	color: #306CC2;
+	font-size: 25px;
+	font-family: verdana;
+	padding-top: 20px;
+}
+
+
+#priceDisplay{
+	font-size: 20px;
+	font-family: verdana;
+	padding-top: 25px;
+	margin-top: 15px;
+
+}
+
+#volume{
+	font-size: 13px;
+	font-family: verdana;
+}
+
+#box{
+	border: border-black;
+}
+
+#changeDiv{
+	font-size: 15px;
+	font-family: verdana;
+	color: white !important;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100px;
+	text-align: center;
+}
+
+#date{
+	font-size: 10px;
+}
+
+#stats{
+	justify-content: right;
+	font-size: 15px;
+
+}
+#open{
+	color: #DC7B5B;
+	justify-content: right;
+}
+#high{
+	color: #6B844B;
+	justify-content: right;
+}
+#low{
+	color: #66A289;
+	justify-content: right;
+}

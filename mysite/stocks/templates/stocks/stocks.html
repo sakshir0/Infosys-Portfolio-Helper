@@ -1,0 +1,61 @@
+{% include 'header.html' %}
+{% load staticfiles %}
+{% block content %}
+<link rel='stylesheet' href="{% static 'stocks.css' %}" type="text/css"/>
+
+<!--search bar-->
+<form method="POST" id="search">
+	{% csrf_token %}
+	<div class="form-group float-right">
+	<div class="row">
+		<div class="col">
+		<label for="Search"></label>
+		<input type="text" id="tickerInput" name="tickerInput" class="form form-control">
+		</div>
+		<div class="col">
+		<button type="submit" class="btn btn-default">Search</button>
+		</div>
+	</div>
+	</div>
+</form>
+
+<!--ticker, name, price, difference-->
+<div class="row">
+	<div>
+		<h2 id="ticker" class="display-3"> {{query.ticker}}</h2>
+		<h3 id="name"> {{query.name}}</h3>
+	</div>
+	<div id="price"><h2 class="display-2"><strong>{{query.price}}</strong></h2></div>
+	<div class="rounded" id="changeDiv">
+		<h3 id="changeText">{{query.difference}}</h3>
+	</div>
+</div>
+
+<!--chart-->
+	<div id="chart"><img class="col-sm-12 col-md-8 col-lg-8" src={% static 'chart.svg' %}></div>
+
+	<!-- circle graphic and text-->
+	<div class="text-center col-sm-4 col-md-4 col-lg-4 float-right" id="circle">
+		<img id="circleGraphic" height="250" width="250" src={% static 'circle.png' %}>
+		<h3 id="titleGraphic">Our Momentum Score</h3>
+		<div class="display-3" id="score">{{query.momentum}}
+		</div>
+	</div>
+
+<!--changes color depending on if positive or negative-->
+<script>
+	$('document').ready(function(){
+		var change = document.getElementById('changeText')
+		if (change.innerHTML < 0) {
+			change.style.backgroundColor = 'red';
+			change.style.borderRadius = '10px';
+		} else {
+			change.style.backgroundColor = 'green';
+			change.style.borderRadius = '10px';
+		}
+	});
+</script>
+
+{% endblock %}
+
+

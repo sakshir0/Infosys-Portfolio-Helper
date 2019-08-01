@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<link rel='stylesheet' href="{% static 'login.css' %}" type="text/css"/>
+  	<nav class="navbar navbar-dark bg-dark">
+	    <a class="navbar-brand font-type="text/css" media="screen">
+	        <img src="{% static 'logo.png' %}" id="logo" width="30" height="30" class="d-inline-block align-top">
+	        Momentum
+	    </a>
+	</nav>
+	
+<div class="container">
+	<form class="col-lg-8 col-md-8 col-sm-11 card border-dark bg-light mx-auto" action="{% url 'accounts:login' %}" method="post">
+		<div class="card-header bg-dark mb-3">Log In</div>
+			{% csrf_token %}
+			{{ form }}
+			{% if request.GET.next %}
+				<input type="hidden" name="next" value="{{request.GET.next}}">
+			{% endif %}
+			<p id="signup">Don't have an account? Sign up
+			<a href='/'>here.</a></p>
+			<button type="submit">Login</button>
+	</form>
+</div>
+{% endblock %}

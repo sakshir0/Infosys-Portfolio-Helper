@@ -1,0 +1,33 @@
+{% include 'header.html' %}
+{% load staticfiles %}
+{% load portfolio_extras %}
+<link rel='stylesheet' href="{% static 'portfolio.css' %}" type="text/css"/>
+{% block content %}
+<h3 class="display-4 text-center">My Portfolio</h3>
+<table class="table table-striped table-hover">
+<tbody>
+{% for result in data %}
+	<div class="container-fluid">
+	<tr>
+		<td id="ticker">{{ result| lookup:'1. symbol' }}</td>
+		<td id="price">
+			<span id="priceDisplay">${{ result| lookup:'5. price' }}</span><br>
+			<span id="volume"> Vol: {{ result| lookup:'6. volume'}}</span>
+		</td>
+		<td id="change">
+			<div class="bg-info rounded" id="changeDiv">
+			{{ result| lookup:'9. difference'}}</div>
+			<span id="date"> {{ result| lookup:'7. timestamp'}}</span>
+		</td>
+		<td id="stats">
+			Open: <span id="open">{{ result| lookup:'2. open'}}</span><br/> 
+			High: <span  id="high">{{ result| lookup:'3. high'}}</span><br/> 
+			Low: <span id="low">{{ result| lookup:'4. low'}}</span>
+		</td>
+	</tr>
+	</div>
+{% endfor %}
+</tbody>
+</table>
+
+{% endblock %}
